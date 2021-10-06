@@ -1,6 +1,7 @@
 # eslint-cheat-sheet
 
 
+## .eslintrc
 ```javascript
 {
     "extends": "google",
@@ -24,6 +25,7 @@
         "globalReturn": true,
     },
     "rules": {
+        "arrow-parens": ["error", "as-needed"],
         "valid-jsdoc": ["error", {
             "requireReturn": true,
             "requireReturnType": true,
@@ -60,6 +62,10 @@
             "error",
             5
         ],
+        "max-len": ["error", 120],
+        "comma-dangle": ["error", "never"],
+        "semi": [2, "never"],
+        "new-cap": 0
     }
 }
 ```
