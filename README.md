@@ -4,7 +4,7 @@
 
 ## eslint-config-google
 ```bash
-npm install --save-dev eslint eslint-config-google
+npm install --save-dev eslint eslint-config-google babel-eslint
 ```
 
 <br><br>
