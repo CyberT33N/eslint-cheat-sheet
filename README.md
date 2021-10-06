@@ -30,7 +30,7 @@ npm install --save-dev eslint eslint-config-google
         "defaultParams": true,
         "modules": true,
         "spread": true,
-        "globalReturn": true,
+        "globalReturn": true
     },
     "rules": {
         "arrow-parens": ["error", "as-needed"],
@@ -41,7 +41,7 @@ npm install --save-dev eslint eslint-config-google
             "requireReturnDescription": true,
             "preferType": {
                 "String": "string",
-                "object": "Object",
+                "object": "Object"
             }
         }],
         "require-jsdoc": ["error", {
@@ -55,7 +55,7 @@ npm install --save-dev eslint eslint-config-google
         "no-eval": "error",
         "indent": ["error", 4],
         "quotes": ["error", "single"],
-        "no-console": ["error", { "allow": ["warn", "info"] }],
+        "no-console": "off",
         "space-before-function-paren": ["error", "never"],
         "padded-blocks": ["error", "never"],
         "prefer-arrow-callback": [0, { "allowNamedFunctions": true }],
