@@ -73,7 +73,8 @@ npm install --save-dev eslint eslint-config-google babel-eslint
         "max-len": ["error", 120],
         "comma-dangle": ["error", "never"],
         "semi": [2, "never"],
-        "new-cap": 0
+        "new-cap": 0,
+        "guard-for-in": 0
     }
 }
 ```
