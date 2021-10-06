@@ -1,5 +1,13 @@
 # eslint-cheat-sheet
 
+<br><br>
+
+## eslint-config-google
+```bash
+npm install --save-dev eslint eslint-config-google
+```
+
+<br><br>
 
 ## .eslintrc
 ```javascript
