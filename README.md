@@ -4,7 +4,7 @@
 
 ## eslint-config-google
 ```bash
-npm install --save-dev eslint eslint-config-google babel-eslint
+npm install --save-dev eslint eslint-config-google @babel/eslint-parser
 ```
 
 <br><br>
@@ -13,7 +13,7 @@ npm install --save-dev eslint eslint-config-google babel-eslint
 ```javascript
 {
     "extends": "google",
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "env": {
         "browser": false,
         "node": true,
