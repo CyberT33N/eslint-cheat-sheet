@@ -21,7 +21,8 @@ npm install --save-dev eslint eslint-config-google @babel/eslint-parser
         "mocha": false
     },
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "requireConfigFile": false
     },
     "ecmaFeatures": {
         "arrowFunctions": true,
