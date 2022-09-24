@@ -4,7 +4,7 @@
 
 ## eslint-config-google
 ```bash
-npm install --save-dev eslint eslint-config-google @babel/eslint-parser
+npm install --save-dev eslint eslint-config-google @babel/eslint-parser @babel/plugin-proposal-decorators @babel/plugin-proposal-class-properties @babel/plugin-transform-flow-strip-types
 ```
 
 <br><br>
@@ -14,6 +14,11 @@ npm install --save-dev eslint eslint-config-google @babel/eslint-parser
 {
     "extends": "google",
     "parser": "@babel/eslint-parser",
+    "plugins": [
+        ["@babel/plugin-transform-flow-strip-types"],
+        ["@babel/plugin-proposal-decorators", { "legacy": true}],
+        ["@babel/plugin-proposal-class-properties", { "loose": true}]
+    ],
     "env": {
         "browser": false,
         "node": true,
@@ -72,9 +77,11 @@ npm install --save-dev eslint eslint-config-google @babel/eslint-parser
             5
         ],
         "max-len": ["error", 120],
+        "object-curly-spacing": 0,
         "comma-dangle": ["error", "never"],
         "semi": [2, "never"],
         "new-cap": 0,
+        "one-var": 0,
         "guard-for-in": 0
     }
 }
