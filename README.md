@@ -1,12 +1,36 @@
 # eslint-cheat-sheet
 
 <br><br>
+<br><br>
 
 ## eslint-config-google
 ```bash
 npm install --save-dev eslint eslint-config-google @babel/eslint-parser @babel/plugin-proposal-decorators @babel/plugin-proposal-class-properties @babel/plugin-transform-flow-strip-types
 ```
 
+
+
+
+
+
+<br><br>
+<br><br>
+
+## Fix all files in project
+```shell
+eslint --fix .
+```
+
+
+
+
+
+
+
+
+
+
+<br><br>
 <br><br>
 
 ## .eslintrc
