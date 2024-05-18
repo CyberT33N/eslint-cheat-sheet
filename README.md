@@ -5,6 +5,14 @@
 
 ## Install
 
+## Typescript
+```
+npm i --save-dev eslint
+npm init @eslint/config@latest
+
+# Go through guide and select typescript
+```
+
 <br><br>
 <br><br>
 
