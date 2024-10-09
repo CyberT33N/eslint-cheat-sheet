@@ -133,6 +133,28 @@ Additionally, we provide a stylistic config that enforces concise and consistent
     - `export default tseslint.config(...tseslint.configs.stylisticTypeChecked);`
 
 
+Notice that type-checked rules need additional settings:
+- https://typescript-eslint.io/getting-started/typed-linting/
+```typescript
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
+
+export default tseslint.config(
+  eslint.configs.recommended,
+
+  ...tseslint.configs.recommendedTypeChecked,
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+);
+```
+- import.meta.dirname is only present for ESM files in Node.js >=20.11.0 / >= 21.2.0.
+For CommonJS modules and/or older versions of Node.js, use __dirname or an alternative.
 
 
 
