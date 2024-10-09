@@ -41,6 +41,27 @@ npm install --save-dev eslint eslint-config-google @babel/eslint-parser @babel/p
 
 
 
+<br><br>
+<br><br>
+____________________________________________________
+____________________________________________________
+<br><br>
+<br><br>
+
+# Typescript eslint
+
+## no-explicit-any
+
+### Comment
+```javascript
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+```
+
+
+
+
+
+
 
 
 
