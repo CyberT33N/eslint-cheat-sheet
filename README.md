@@ -41,6 +41,15 @@ npm install --save-dev eslint eslint-config-google @babel/eslint-parser @babel/p
 
 
 
+
+
+
+
+
+
+
+
+
 <br><br>
 <br><br>
 ____________________________________________________
@@ -117,6 +126,11 @@ We recommend that most projects should extend from one of:
     - `export default tseslint.config(...tseslint.configs.strictTypeChecked);`
 
 
+Additionally, we provide a stylistic config that enforces concise and consistent code. We recommend that most projects should extend from either:
+    stylistic: Stylistic rules you can drop in without additional configuration.
+     - `export default tseslint.config(...tseslint.configs.stylistic);`
+    stylistic-type-checked: Contains stylistic + additional stylistic rules that require type information.
+    - `export default tseslint.config(...tseslint.configs.stylisticTypeChecked);`
 
 
 
