@@ -181,7 +181,7 @@ export default tseslint.config(
 ```
 - import.meta.dirname is only present for ESM files in Node.js >=20.11.0 / >= 21.2.0.
 For CommonJS modules and/or older versions of Node.js, use __dirname or an alternative.
-- **If your eslint.config.ms getting a parsing error then add to your tsconfig.json at the include array `"**/*.mjs",`**
+- **If your eslint.config.mjs getting a parsing error then add to your tsconfig.json at the include array `"**/*.mjs",`**
 
 
 
