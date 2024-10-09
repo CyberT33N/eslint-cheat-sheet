@@ -168,6 +168,7 @@ For CommonJS modules and/or older versions of Node.js, use __dirname or an alter
 <br><br>
 
 ## Rules
+- https://typescript-eslint.io/rules/
 
 <br><br>
 
@@ -228,11 +229,15 @@ ____________________________________________________
 <br><br>
 <br><br>
 
-# .eslintrc
+
+# eslint
+- https://eslint.org/docs/latest/rules/
+
+## .eslintrc
 
 <br><br>
 
-## Google
+### Google
 ```javascript
 {
     "extends": "google",
@@ -307,7 +312,7 @@ ____________________________________________________
 <br><br>
 
 
-## Google and Babel
+### Google and Babel
 ```javascript
 {
     "extends": "google",
