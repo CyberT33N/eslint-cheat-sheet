@@ -200,12 +200,78 @@ For CommonJS modules and/or older versions of Node.js, use __dirname or an alter
 
 ### no-explicit-any
 
-<br><br>
-
-#### Comment
+Comment:
 ```javascript
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 ```
+
+
+
+
+<br><br>
+
+### unbound-method
+- https://typescript-eslint.io/rules/unbound-method/
+  
+Comment:
+```javascript
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+```
+
+#### Usage with statics
+- There are cases e.g. when you create a singleton class with the getInstance method concept when eslint will trigger an error for unbound-method… There you can disable it with this riles
+```javascript
+// static getInstance() method using this
+'@typescript-eslint/unbound-method': [
+    'error',
+    {
+        'ignoreStatic': true
+    }
+]
+```
+```typescript
+export default class ModelManager {
+    // eslint-disable-next-line no-use-before-define
+    private static instance: ModelManager | null = null
+
+    /**
+     * Private constructor to prevent direct instantiation.
+     * Access is provided via the `getInstance` method.
+     */
+    private constructor() {}
+
+    /**
+     * Returns the singleton instance of the ModelManager.
+     * Initializes the instance upon the first call.
+     * @returns {Promise<ModelManager>} - The singleton instance of the ModelManager.
+     */
+    public static async getInstance(): Promise<ModelManager> {
+        if (!this.instance) {
+            this.instance = new ModelManager()
+            await this.instance.init()
+        }
+        
+        return this.instance
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
