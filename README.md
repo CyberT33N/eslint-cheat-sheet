@@ -219,7 +219,7 @@ Comment:
 ```
 
 #### Usage with statics
-- There are cases e.g. when you create a singleton class with the getInstance method concept when eslint will trigger an error for unbound-method… There you can disable it with this riles
+- There are cases e.g. when you create a singleton class with the getInstance method concept when eslint will trigger an error for unbound-method… There you can disable it with this rules. However, the prefered way is to create a static arrow function instead of diable it via rule!
 ```javascript
 // static getInstance() method using this
 '@typescript-eslint/unbound-method': [
@@ -229,22 +229,22 @@ Comment:
     }
 ]
 ```
+
+Correct:
 ```typescript
-export default class ModelManager {
-    // eslint-disable-next-line no-use-before-define
-    private static instance: ModelManager | null = null
+  public static getInstance = async(): Promise<ModelManager> => {
+        if (!this.instance) {
+            this.instance = new ModelManager()
+            await this.instance.init()
+        }
+        
+        return this.instance
+    }
 
-    /**
-     * Private constructor to prevent direct instantiation.
-     * Access is provided via the `getInstance` method.
-     */
-    private constructor() {}
+```
 
-    /**
-     * Returns the singleton instance of the ModelManager.
-     * Initializes the instance upon the first call.
-     * @returns {Promise<ModelManager>} - The singleton instance of the ModelManager.
-     */
+Wrong
+```typescript
     public static async getInstance(): Promise<ModelManager> {
         if (!this.instance) {
             this.instance = new ModelManager()
@@ -253,7 +253,6 @@ export default class ModelManager {
         
         return this.instance
     }
-}
 ```
 
 
