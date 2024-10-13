@@ -126,11 +126,14 @@ export default tseslint.config(
 
     {
         rules: {
-            // '@typescript-eslint/no-explicit-any': 'off',
-            // '@typescript-eslint/no-unused-vars': 'off',
-            // '@typescript-eslint/no-var-requires': 'off',
-            // '@typescript-eslint/explicit-module-boundary-types': 'off',
-            // '@typescript-eslint/no-empty-function   ': 'off',
+              // Disable for private constructor where we use it for singleton pattern
+            '@typescript-eslint/no-empty-function': 'off',
+
+            // Disable for accessing private properties e.g. ModelManager['instance']
+            '@typescript-eslint/dot-notation': 'off',
+
+            // Allowing records and index types
+            '@typescript-eslint/consistent-indexed-object-style': 'off'
         }
     }
 )
