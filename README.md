@@ -107,7 +107,7 @@ export default tseslint.config(
             'no-eval': 'error',
             'indent': ['error', 4],
             'quotes': ['error', 'single'],
-            'no-console': 'error', // Stricter than original
+            'no-console': ["error", { allow: ["warn", "error", "info", "trace", ] }], // Stricter than original
             'space-before-function-paren': ['error', 'never'],
             'padded-blocks': ['error', 'never'],
             'prefer-arrow-callback': ['error', { // Stricter than original
@@ -158,7 +158,6 @@ export default tseslint.config(
                     'sibling',
                     'index'
                 ],
-                'newlines-between': 'always',
                 'alphabetize': {
                     'order': 'asc',
                     'caseInsensitive': true
@@ -235,10 +234,16 @@ export default tseslint.config(
         languageOptions: {
             parser: tseslint.parser,
             parserOptions: {
-                project: './tsconfig.json',
+                /*
+                - https://typescript-eslint.io/blog/announcing-typescript-eslint-v8/#project-service
+                The project service will automatically find the closest tsconfig.json for each file (like project: true)
+                */
+                projectService: true,
+
+                /* 
+                - https://typescript-eslint.io/packages/parser/#tsconfigrootdir
+                The root directory for the tsconfig.json file (https://typescript-eslint.io/packages/parser/#tsconfigrootdir) */
                 tsconfigRootDir: import.meta.dirname,
-                ecmaVersion: 'latest',
-                sourceType: 'module'
             }
         }
     },
@@ -408,14 +413,21 @@ export default tseslint.config(
     ...tseslint.configs.stylisticTypeChecked,
     
     // Add TypeScript parser configuration
+    // ===== TYPESCRIPT PARSER CONFIG =====
     {
         languageOptions: {
             parser: tseslint.parser,
             parserOptions: {
-                project: './tsconfig.json',
+                /*
+                - https://typescript-eslint.io/blog/announcing-typescript-eslint-v8/#project-service
+                The project service will automatically find the closest tsconfig.json for each file (like project: true)
+                */
+                projectService: true,
+
+                /* 
+                - https://typescript-eslint.io/packages/parser/#tsconfigrootdir
+                The root directory for the tsconfig.json file (https://typescript-eslint.io/packages/parser/#tsconfigrootdir) */
                 tsconfigRootDir: import.meta.dirname,
-                ecmaVersion: 'latest',
-                sourceType: 'module'
             }
         }
     },
