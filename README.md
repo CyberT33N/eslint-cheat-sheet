@@ -81,86 +81,108 @@ v2:
 <details><summary>Click to expand..</summary>
 
 ```typescript
-{
-  "name": "cmcu",
-  "version": "1.0.0",
-  "private": false,
-  "type": "module",
-  "description": "A modern Electron.js application for secure file encryption and compression",
-  "main": "out/main/index.js",
-  "scripts": {
-    "start": "electron-vite preview",
-    "dev": "electron-vite dev --watch",
-    "start:debug-main": "REMOTE_DEBUGGING_PORT=9222 electron-vite dev --sourcemap",
-    "start:debug-renderer": "node --inspect-brk=9222",
-    "debug:all": "npm run start:debug-main & npm run start:debug-renderer",
-    "build": "electron-vite build",
-    "preview": "electron-vite preview",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "gif": "tsx utils/gif-creator.ts"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@nextui-org/react": "^2.6.11",
-    "@tabler/icons-react": "^3.29.0",
-    "animejs": "^3.2.2",
-    "clsx": "^2.1.1",
-    "electron-store": "^10.0.1",
-    "framer-motion": "^11.18.2",
-    "fs-extra": "^11.1.1",
-    "lucide-react": "^0.474.0",
-    "mini-svg-data-uri": "^1.4.4",
-    "motion": "^12.0.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-dropzone": "^14.3.5",
-    "sudo-prompt": "^9.2.1",
-    "tailwind-merge": "^3.0.1",
-    "tailwindcss-animate": "^1.0.7"
-  },
-  "devDependencies": {
-    "@electron-toolkit/eslint-config-ts": "^3.0.0",
-    "@eslint/create-config": "^1.4.0",
-    "@eslint/js": "^9.22.0",
-    "@types/eslint__js": "^8.42.3",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "@vitejs/plugin-react": "^4.3.4",
-    "autoprefixer": "^10.4.20",
-    "concurrently": "^8.2.2",
-    "electron": "^28.1.0",
-    "electron-builder": "^24.9.1",
-    "electron-vite": "^3.0.0",
-    "eslint": "^9.22.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "postcss": "^8.5.1",
-    "puppeteer": "^24.2.0",
-    "tailwindcss": "^3.4.17",
-    "tsx": "^4.19.3",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.1",
-    "vite": "^6.1.1",
-    "vitest": "^3.0.6",
-    "wait-on": "^7.2.0"
-  },
-  "build": {
-    "appId": "com.electron.secure-file-vault",
-    "files": [
-      "dist/**/*",
-      "main.js",
-      "preload.js"
-    ],
-    "directories": {
-      "output": "release"
-    }
-  }
-}
+import eslint from '@eslint/js'
+import tseslint from 'typescript-eslint'
+import reactPlugin from 'eslint-plugin-react'
+import reactHooksPlugin from 'eslint-plugin-react-hooks'
 
+export default tseslint.config(
+    // ===== ESLINT RULES =====
+    {
+        ...eslint.configs.recommended,
+        rules: {
+            ...eslint.configs.recommended.rules,
+
+            // Hier fügst du deine neue Regel hinzu
+            'arrow-parens': ['error', 'as-needed'],
+            'no-var': 1,
+            'no-eval': 'error',
+            indent: ['error', 4],
+            quotes: ['error', 'single'],
+            'no-console': 'off',
+            'space-before-function-paren': ['error', 'never'],
+            'padded-blocks': ['error', 'never'],
+
+            'prefer-arrow-callback': [0, {
+                allowNamedFunctions: true
+            }],
+
+            'func-names': ['error', 'never'],
+
+            'no-use-before-define': ['error', {
+                functions: true,
+                classes: true
+            }],
+
+            'max-len': ['error', 120],
+            'object-curly-spacing': 0,
+            'comma-dangle': ['error', 'never'],
+            semi: [2, 'never'],
+            'new-cap': 0,
+            'one-var': 0,
+            'guard-for-in': 0,
+        }
+    },
+
+    // ===== REACT RULES =====
+    {
+        plugins: {
+            react: reactPlugin,
+            'react-hooks': reactHooksPlugin
+        },
+        languageOptions: {
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
+            }
+        },
+        settings: {
+            react: {
+                version: 'detect'
+            }
+        },
+        rules: {
+            // React rules
+            'react/react-in-jsx-scope': 'off',
+            'react/prop-types': 'off',
+            'react-hooks/rules-of-hooks': 'error',
+            'react-hooks/exhaustive-deps': 'warn'
+        }
+    },
+
+    // ===== TSESLINT RULES =====
+    // Use the type-checked configurations
+    ...tseslint.configs.recommendedTypeChecked,
+    ...tseslint.configs.stylisticTypeChecked,
+    
+    // Add TypeScript parser configuration
+    {
+        languageOptions: {
+            parser: tseslint.parser,
+            parserOptions: {
+                project: './tsconfig.json',
+                tsconfigRootDir: import.meta.dirname,
+                ecmaVersion: 'latest',
+                sourceType: 'module'
+            }
+        }
+    },
+
+    // Custom TypeScript rule overrides
+    {
+        rules: {
+            // Disable for private constructor where we use it for singleton pattern
+            '@typescript-eslint/no-empty-function': 'off',
+
+            // Disable for accessing private properties e.g. ModelManager['instance']
+            '@typescript-eslint/dot-notation': 'off',
+
+            // Allowing records and index types
+            '@typescript-eslint/consistent-indexed-object-style': 'off'
+        }
+    }
+)
 ```
   
 </details>
