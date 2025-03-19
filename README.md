@@ -74,11 +74,11 @@ package.json:
 ```
 
 
-eslint.config.mjs:
+### eslint.config.mjs:
 
 
 
-Extrem strict:
+#### Extrem strict:
 
 <details><summary>Click to expand..</summary>
 
@@ -327,7 +327,7 @@ export default tseslint.config(
 
 
 
-Recommended:
+#### Recommended:
 
 
 <details><summary>Click to expand..</summary>
