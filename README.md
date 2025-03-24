@@ -62,7 +62,7 @@ ____________________________________________________
 
 ## Install
 ```shell
-npm install --save-dev eslint @eslint/js @types/eslint__js typescript typescript-eslint
+npm install --save-dev eslint @eslint/js typescript-eslint eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-import eslint-plugin-jsx-a11y
 ```
 
 package.json:
