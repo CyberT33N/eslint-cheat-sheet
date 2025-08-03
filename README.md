@@ -76,7 +76,10 @@ https://www.npmjs.com/package/eslint-plugin-jsdoc
 ## eslint-plugin-xss
 - **not eslint 9 compatibel**
 
+## Testing
 
+### Jest
+- https://www.npmjs.com/package/eslint-plugin-jest
 
 
 
