@@ -81,6 +81,14 @@ https://www.npmjs.com/package/eslint-plugin-jsdoc
 ### Jest
 - https://www.npmjs.com/package/eslint-plugin-jest
 
+### testing-library
+eslint-plugin-testing-library
+
+### Vitest
+eslint-plugin-vitest
+
+### Mocha
+eslint-plugin-mocha
 
 
 <br><br>
