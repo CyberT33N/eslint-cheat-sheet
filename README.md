@@ -73,8 +73,8 @@ import pluginPromise from 'eslint-plugin-promise'
 - Dieses Plug-In **MUSS** man nicht wirklich in einem TypeScript-Projekt verwenden, wo TS-Docs verwendet werden.
 https://www.npmjs.com/package/eslint-plugin-jsdoc
 
-
-
+## eslint-plugin-xss
+- **not eslint 9 compatibel**
 
 
 
