@@ -38,10 +38,40 @@ npm install --save-dev eslint eslint-config-google @babel/eslint-parser @babel/p
 
 
 
+<br><br>
+<br><br>
+____________________________________________________
+____________________________________________________
+<br><br>
+<br><br>
 
 
+# Plugins
 
+```
+import eslint from '@eslint/js'
+import importPlugin from 'eslint-plugin-import'
+import a11yPlugin from 'eslint-plugin-jsx-a11y'
+import reactPlugin from 'eslint-plugin-react'
+import reactHooksPlugin from 'eslint-plugin-react-hooks'
+// https://github.com/eslint-stylistic/eslint-stylistic
+import stylistic from '@stylistic/eslint-plugin'
+import tseslint from 'typescript-eslint'
+// https://github.com/sindresorhus/eslint-plugin-unicorn
+import eslintPluginUnicorn from 'eslint-plugin-unicorn'
+// https://github.com/eslint-community/eslint-plugin-n
+import nodePlugin from 'eslint-plugin-n'
+// https://www.npmjs.com/package/eslint-plugin-security
+import pluginSecurity from 'eslint-plugin-security'
+// https://www.npmjs.com/package/eslint-plugin-sonarjs
+import sonarjs from 'eslint-plugin-sonarjs'
+// https://www.npmjs.com/package/eslint-plugin-promise
+import pluginPromise from 'eslint-plugin-promise'
+```
 
+## eslint-plugin-jsdoc
+- Dieses Plug-In **MUSS** man nicht wirklich in einem TypeScript-Projekt verwenden, wo TS-Docs verwendet werden.
+https://www.npmjs.com/package/eslint-plugin-jsdoc
 
 
 
