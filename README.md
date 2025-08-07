@@ -76,6 +76,15 @@ https://www.npmjs.com/package/eslint-plugin-jsdoc
 ## eslint-plugin-xss
 - **not eslint 9 compatibel**
 
+
+
+
+## Module boundaries 
+- https://sheriff.softarc.io/docs/introduction
+
+
+<br><br>
+
 ## Testing
 
 ### Jest
