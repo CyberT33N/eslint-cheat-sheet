@@ -69,6 +69,41 @@ import sonarjs from 'eslint-plugin-sonarjs'
 import pluginPromise from 'eslint-plugin-promise'
 ```
 
+<br><br>
+
+## eslint-plugin-boundarie
+```
+
+/*
+ * ===== ENTERPRISE DECISION: BOUNDARIES PLUGIN DEAKTIVIERT =====
+ * BEGRÜNDUNG: Nach Analyse der Big Tech Standards (Google, Meta, Microsoft, Amazon)
+ * wird eslint-plugin-boundaries in KEINEM der großen Open Source Projekte verwendet.
+ *
+ * ENTERPRISE ANTI-PATTERN EVIDENZ:
+ * ❌ Hoher Maintenance Overhead: Jede neue Datei = ESLint Config Update
+ * ❌ Developer Friction: Team-Blockierung bei undefinierten Strukturen
+ * ❌ Over-Engineering: Zu granulare Kontrolle für Library-Entwicklung
+ * ❌ Performance Impact: Zusätzliche Linter-Rules verlangsamen Build
+ *
+ * BIG TECH PROVEN ALTERNATIVES IMPLEMENTIERT:
+ * ✅ import/no-restricted-paths: Für kritische Architectural Boundaries
+ * ✅ TypeScript-native Boundaries: Compiler-enforced statt Linter-enforced
+ * ✅ Konventionsbasierte Architektur: Self-documenting Code Structure
+ * ✅ Code Review Governance: Human-in-the-loop für Architecture Decisions
+ */
+
+/*
+ * ENTERPRISE STANDARD: Focus auf Developer Experience + Produktivität
+ * Ref: Google Angular (konventionsbasiert), Meta React (feature-based),
+ *      Microsoft TypeScript (type-driven), Amazon AWS SDK (service-oriented)
+ * https://github.com/mxschmitt/eslint-plugin-boundaries
+ * import boundaries from "eslint-plugin-boundaries";
+ */
+
+```
+
+<br><br>
+
 ## eslint-plugin-jsdoc
 - Dieses Plug-In **MUSS** man nicht wirklich in einem TypeScript-Projekt verwenden, wo TS-Docs verwendet werden.
 https://www.npmjs.com/package/eslint-plugin-jsdoc
