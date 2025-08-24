@@ -73,11 +73,24 @@ import pluginPromise from 'eslint-plugin-promise'
 - Dieses Plug-In **MUSS** man nicht wirklich in einem TypeScript-Projekt verwenden, wo TS-Docs verwendet werden.
 https://www.npmjs.com/package/eslint-plugin-jsdoc
 
+<br><br>
+
 ## eslint-plugin-xss
 - **not eslint 9 compatibel**
+```
+
+// ⚠️ INCOMPATIBLE WITH ESLINT 9 - DO NOT USE
+// eslint-plugin-xss uses deprecated APIs (getComments) removed in ESLint 9
+/*
+ * Last updated: 2019 - NOT MAINTAINED
+ * Alternative: Use eslint-plugin-security for XSS prevention
+ * https://www.npmjs.com/package/eslint-plugin-xss
+ * import eslintPluginXss from 'eslint-plugin-xss'
+ */
+```
 
 
-
+<br><br>
 
 ## Module boundaries 
 - https://sheriff.softarc.io/docs/introduction
