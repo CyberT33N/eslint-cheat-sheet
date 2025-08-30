@@ -131,6 +131,16 @@ https://www.npmjs.com/package/eslint-plugin-jsdoc
 - https://sheriff.softarc.io/docs/introduction
 
 
+## file formats
+
+### markdown
+
+#### eslint-markdown
+- https://github.com/eslint/markdown
+-   - no support for eslint 9 yet
+
+
+
 <br><br>
 
 ## Testing
