@@ -127,6 +127,11 @@ https://www.npmjs.com/package/eslint-plugin-jsdoc
 
 <br><br>
 
+
+
+
+
+
 ## Module boundaries 
 - https://sheriff.softarc.io/docs/introduction
 
@@ -139,6 +144,11 @@ https://www.npmjs.com/package/eslint-plugin-jsdoc
 - https://github.com/eslint/markdown
 -   - no support for eslint 9 yet
 
+
+<br><br>
+
+## Browser
+- https://www.npmjs.com/package/eslint-plugin-compat
 
 
 <br><br>
