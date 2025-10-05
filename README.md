@@ -71,6 +71,12 @@ import pluginPromise from 'eslint-plugin-promise'
 
 <br><br>
 
+## eslint-plugin-prefer-arrow-functions
+- Diese Regel ist nicht konform mit TypeScript, weil der Autofix dieser Regel normale Funktionen nach Error-Funktionen setzt. Wenn man die Named-Function-Option auf True setzt, hätte laut KI dieses ESLint-Plugin keinen Sinn mehr. Daher macht es keinen Sinn, es in einer TypeScript-Umgebung zu benutzen, nur in einer normalen Node.js-Umgebung.
+
+<br><br>
+
+
 ## eslint-plugin-boundarie
 
 <br><br>
