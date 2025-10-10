@@ -145,6 +145,37 @@ eslint-plugin-vitest
 eslint-plugin-mocha
 
 
+
+
+## Sorting
+
+### eslint-plugin-typescript-sort-keys
+- **Not needed because sorting enums and interfaces has to many not wanted side effects**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
 <br><br>
 ____________________________________________________
