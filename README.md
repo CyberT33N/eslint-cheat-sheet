@@ -119,7 +119,10 @@ https://www.npmjs.com/package/eslint-plugin-jsdoc
 
 #### eslint-markdown
 - https://github.com/eslint/markdown
--   - no support for eslint 9 yet
+  - no support for eslint 9 yet
+
+- eslint-plugin-markdownlint
+  - no support for eslint 9 yet 
 
 
 <br><br>
